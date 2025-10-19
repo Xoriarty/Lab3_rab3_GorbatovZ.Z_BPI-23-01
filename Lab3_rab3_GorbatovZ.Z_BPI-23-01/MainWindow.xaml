@@ -10,111 +10,11 @@
         Background="#FFF5F5F5">
 
     <Window.Resources>
-        <Style TargetType="RadioButton">
-            <Setter Property="Margin" Value="10,5"/>
-            <Setter Property="Padding" Value="0"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-        </Style>
-
-        <Style TargetType="GroupBox">
-            <Setter Property="BorderBrush" Value="#FF2196F3"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Background">
-                <Setter.Value>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                        <GradientStop Color="#FFFFFFFF" Offset="0"/>
-                        <GradientStop Color="#FFF3F3F3" Offset="1"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Foreground" Value="#FF1976D2"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Padding" Value="10"/>
-            <Setter Property="Margin" Value="5"/>
-          
-        </Style>
-
-        <Style TargetType="TextBox">
-            <Setter Property="Background">
-                <Setter.Value>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="White" Offset="0"/>
-                        <GradientStop Color="#FFE3F2FD" Offset="1"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="BorderBrush" Value="#FF90CAF9"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Padding" Value="2"/>
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="MinWidth" Value="70"/>
-            <Setter Property="Height" Value="25"/>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="BorderBrush" Value="#FF2196F3"/>
-                </Trigger>
-                <Trigger Property="IsFocused" Value="True">
-                    <Setter Property="BorderBrush" Value="#FF2196F3"/>
-                    <Setter Property="BorderThickness" Value="2"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
-        <Style TargetType="ComboBox">
-            <Setter Property="Background">
-                <Setter.Value>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="White" Offset="0"/>
-                        <GradientStop Color="#FFE3F2FD" Offset="1"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="BorderBrush" Value="#FF90CAF9"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Padding" Value="5"/>
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="Height" Value="25"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-        </Style>
-
-        <Style TargetType="Label">
-            <Setter Property="Foreground" Value="#FF1565C0"/>
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="Padding" Value="5,0"/>
-        </Style>
-
-        <Style x:Key="ResultTextStyle" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="#FF1976D2"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="10"/>
-
-            <Setter Property="MinWidth" Value="80"/>
-            <Setter Property="MinHeight" Value="30"/>
-        </Style>
-
-        <Style TargetType="Image">
-            <Setter Property="Stretch" Value="Uniform"/>
-            <Setter Property="Width" Value="390"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-        </Style>
-
-        <Style TargetType="WrapPanel">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
-
-        <Style TargetType="Grid">
-            <Setter Property="Margin" Value="5"/>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resource/DictionaryStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
 
     <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="10">
@@ -140,7 +40,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Label Content="a = " Grid.Column="0" Grid.Row="0"/>
-                                <TextBox Text="{Binding A, StringFormat=N2}" Grid.Column="1" Grid.Row="0"/>
+                                <TextBox Text="{Binding A, StringFormat=N2}" Grid.Column="1" Grid.Row="0" />
 
                                 <Label Content="f = " Grid.Column="0" Grid.Row="1"/>
                                 <ComboBox Grid.Column="1" Grid.Row="1" ItemsSource="{Binding F}" SelectedIndex="{Binding Index}"/>
